@@ -1,0 +1,11 @@
+The CSS code has an unexpected behavior when applying multiple pseudo-classes to an element. For example, consider the following code:
+
+```css
+a:hover:focus {
+  background-color: yellow;
+}
+```
+
+In some browsers, this code might not work as expected when both :hover and :focus are triggered simultaneously.  The expected behavior is that the background color turns yellow, however it might not or might display some unexpected behavior.
+
+This is often due to the order of specificity and how the browser interprets the cascade of styles. The issue is subtle and might not always be reproducible across browsers.
