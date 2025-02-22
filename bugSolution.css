@@ -1,0 +1,22 @@
+There isn't a single universal solution for this issue because the cause can be browser-specific and related to how the cascade of styles is handled. Possible solutions include:
+
+1. **Increased Specificity:** Add more specificity to the selector to override other styles. You could do so by adding more element selectors or using the `!important` flag (though use of `!important` is generally discouraged).
+
+2. **Separate Styles:** Apply styles for `:hover` and `:focus` separately to ensure that both changes work independently. Then combine them.
+
+```css
+a:hover {
+  background-color: lightblue;
+}
+a:focus {
+  box-shadow: 0 0 5px blue;
+}
+a:hover:focus {
+  background-color: yellow; /*Added in case both are active*/
+  box-shadow: 0 0 5px blue;
+}
+```
+
+3. **JavaScript-based solution:** Use JavaScript to detect both :hover and :focus and apply the styles accordingly. This approach provides more control over the order and timing of style application.
+
+The best approach is context-dependent, but exploring these will likely resolve the issue.
